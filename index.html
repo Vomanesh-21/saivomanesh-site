@@ -398,5 +398,30 @@
   </footer>
 
 
+  <!-- Portfolio Click Tracking -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const trackClick = (selector, eventName) => {
+      document.querySelectorAll(selector).forEach((element) => {
+        element.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag("event", eventName, {
+              event_category: "portfolio_engagement",
+              event_label: element.textContent.trim()
+            });
+          }
+        });
+      });
+    };
+
+    trackClick('a[href*="resume.pdf"]', "resume_click");
+    trackClick('a[href*="linkedin.com"]', "linkedin_click");
+    trackClick('a[href^="mailto:"]', "email_click");
+    trackClick('a[href*="director-recommendation"]', "director_letter_click");
+    trackClick('a[href*="manager-recommendation"]', "manager_letter_click");
+
+  });
+</script>
 </body>
 </html>
