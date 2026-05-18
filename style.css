@@ -554,3 +554,9 @@ footer {
   margin-top: 20px !important;
 }
 
+.pending-letter {
+  background: #d9d4cc !important;
+  color: #5f5a53 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
